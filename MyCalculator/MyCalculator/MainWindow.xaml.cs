@@ -12,15 +12,15 @@ namespace MyCalculator
         #endregion Fields
 
         #region Properties
-        public string Exp
+        public string DisplayText
         {
             get
             {
-                return (string)GetValue(ExpProperty);
+                return (string)GetValue(DisplayTextProperty);
             }
             set
             {
-                SetValue(ExpProperty, value);
+                SetValue(DisplayTextProperty, value);
             }
         }
         private bool IsON
@@ -47,7 +47,7 @@ namespace MyCalculator
         }
 
         #region DependencyProperties
-        public static DependencyProperty ExpProperty = DependencyProperty.Register("Exp", typeof(string), typeof(MainWindow), new PropertyMetadata(""));
+        public static DependencyProperty DisplayTextProperty = DependencyProperty.Register("DisplayText", typeof(string), typeof(MainWindow), new PropertyMetadata(""));
         public static DependencyProperty StatusProperty = DependencyProperty.Register("Status", typeof(string), typeof(MainWindow), new PropertyMetadata("Off"));
         public static DependencyProperty IsONProperty = DependencyProperty.Register("IsON", typeof(bool), typeof(MainWindow), new PropertyMetadata(false));
         #endregion DependencyProperties
@@ -61,91 +61,115 @@ namespace MyCalculator
             {
                 IsON = true;
                 Status = "On";
+                DisplayText = "";
             }
             else
             {
                 IsON = false;
                 Status = "Off";
+                DisplayText = "";
             }
         }
 
         private void btnOne_Click(object sender, RoutedEventArgs e)
         {
-            if (Exp.Length < 10)
+            if (DisplayText.Length < 10)
             {
-                Exp += "1"; 
+                DisplayText += "1"; 
             }
         }
 
         private void btnTwo_Click(object sender, RoutedEventArgs e)
         {
-            if (Exp.Length < 10)
+            if (DisplayText.Length < 10)
             {
-                Exp += "2";
+                DisplayText += "2";
             }
         }
 
         private void btnThree_Click(object sender, RoutedEventArgs e)
         {
-            if (Exp.Length < 10)
+            if (DisplayText.Length < 10)
             {
-                Exp += "3";
+                DisplayText += "3";
             }
         }
 
         private void btnFour_Click(object sender, RoutedEventArgs e)
         {
-            if (Exp.Length < 10)
+            if (DisplayText.Length < 10)
             {
-                Exp += "4";
+                DisplayText += "4";
             }
         }
 
         private void btnFive_Click(object sender, RoutedEventArgs e)
         {
-            if (Exp.Length < 10)
+            if (DisplayText.Length < 10)
             {
-                Exp += "5";
+                DisplayText += "5";
             }
         }
 
         private void btnSix_Click(object sender, RoutedEventArgs e)
         {
-            if (Exp.Length < 10)
+            if (DisplayText.Length < 10)
             {
-                Exp += "6";
+                DisplayText += "6";
             }
         }
 
         private void btnSeven_Click(object sender, RoutedEventArgs e)
         {
-            if (Exp.Length < 10)
+            if (DisplayText.Length < 10)
             {
-                Exp += "7";
+                DisplayText += "7";
             }
         }
 
         private void btnEight_Click(object sender, RoutedEventArgs e)
         {
-            if (Exp.Length < 10)
+            if (DisplayText.Length < 10)
             {
-                Exp += "8";
+                DisplayText += "8";
             }
         }
 
         private void btnNine_Click(object sender, RoutedEventArgs e)
         {
-            if (Exp.Length < 10)
+            if (DisplayText.Length < 10)
             {
-                Exp += "9";
+                DisplayText += "9";
             }
         }
 
         private void btnZero_Click(object sender, RoutedEventArgs e)
         {
-            if (Exp.Length < 10 && Exp.Length > 0)
+            if (DisplayText.Length < 10 && DisplayText.Length > 0)
             {
-                Exp += "0";
+                DisplayText += "0";
+            }
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            DisplayText = DisplayText.Remove(DisplayText.Length - 1);
+        }
+
+        private void btnClearAll_Click(object sender, RoutedEventArgs e)
+        {
+            DisplayText = "";
+        }
+
+        private void btnPlusMin_Click(object sender, RoutedEventArgs e)
+        {
+            if (DisplayText[0] != '-')
+            {
+                DisplayText = "-" + DisplayText; 
+            }
+            else
+            {
+                DisplayText = DisplayText.Remove(0, 1);
             }
         }
         #endregion EventHndlers
@@ -160,9 +184,5 @@ namespace MyCalculator
         }
         #endregion Constructors
 
-        private void btnClear_Click(object sender, RoutedEventArgs e)
-        {
-            Exp = Exp.Remove(Exp.Length - 1);
-        }
     }
 }
