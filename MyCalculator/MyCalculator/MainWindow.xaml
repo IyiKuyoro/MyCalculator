@@ -19,12 +19,12 @@
     <DockPanel x:Name="CalcDock">
         <TextBlock DockPanel.Dock="Top" Height="40" TextWrapping="NoWrap"
                    VerticalAlignment="Top" Margin="10,10,10,10" TextAlignment="Right" 
-                   FontSize="20" Background="AliceBlue"/>
+                   FontSize="20" Background="AliceBlue" Text="{Binding ElementName=winCalculator, Path=Exp}" Name="display"/>
         <Border BorderThickness="1" BorderBrush="AliceBlue">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
@@ -36,29 +36,29 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="1"
-                    Grid.Row="1" Grid.Column="0" Name="btnOne"/>
+                    Grid.Row="1" Grid.Column="0" Name="btnOne" Click="btnOne_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="2"
-                    Grid.Row="1" Grid.Column="1" Name="btnTwo"/>
+                    Grid.Row="1" Grid.Column="1" Name="btnTwo" Click="btnTwo_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="3"
-                    Grid.Row="1" Grid.Column="2" Name="btnThree"/>
+                    Grid.Row="1" Grid.Column="2" Name="btnThree" Click="btnThree_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="4"
-                    Grid.Row="2" Grid.Column="0" Name="btnFour"/>
+                    Grid.Row="2" Grid.Column="0" Name="btnFour" Click="btnFour_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="5"
-                    Grid.Row="2" Grid.Column="1" Name="btnFive"/>
+                    Grid.Row="2" Grid.Column="1" Name="btnFive" Click="btnFive_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="6"
-                    Grid.Row="2" Grid.Column="2" Name="btnSix"/>
+                    Grid.Row="2" Grid.Column="2" Name="btnSix" Click="btnSix_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="7"
-                    Grid.Row="3" Grid.Column="0" Name="btnSeven"/>
+                    Grid.Row="3" Grid.Column="0" Name="btnSeven" Click="btnSeven_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="8"
-                    Grid.Row="3" Grid.Column="1" Name="btnEight"/>
+                    Grid.Row="3" Grid.Column="1" Name="btnEight" Click="btnEight_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="9"
-                     Grid.Row="3" Grid.Column="2" Name="btnNine"/>
+                     Grid.Row="3" Grid.Column="2" Name="btnNine" Click="btnNine_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="0"
-                    Grid.Row="4" Grid.Column="1" Name="btnZero"/>
+                    Grid.Row="4" Grid.Column="1" Name="btnZero" Click="btnZero_Click"/>
                 <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Red" Cursor="Hand"
                         Name="btnOnOff" Click="btnOnOff_Click" Content="{Binding ElementName=winCalculator, Path=Status}"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}"
-                        Grid.Row="0" Grid.Column="1" Content="C" Name="btnClear"/>
+                        Grid.Row="0" Grid.Column="1" Content="C" Name="btnClear" Click="btnClear_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}"
                         Grid.Row="0" Grid.Column="2" Content="CE" Name="btnClearAll"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Background="Green"
