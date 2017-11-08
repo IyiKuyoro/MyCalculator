@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyCalculator"
         mc:Ignorable="d"
-        Title="My Calculator" Height="348" Width="215" ResizeMode="NoResize">
+        Title="My Calculator" Height="359" Width="215" ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="ButtonControl" TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -17,9 +17,10 @@
         </Style>
     </Window.Resources>
     <DockPanel x:Name="CalcDock">
-        <TextBlock DockPanel.Dock="Top" Height="40" TextWrapping="NoWrap"
+        <TextBox DockPanel.Dock="Top" Height="50" TextWrapping="NoWrap"
                    VerticalAlignment="Top" Margin="10,10,10,10" TextAlignment="Right" 
-                   FontSize="20" Background="AliceBlue" Text="{Binding ElementName=winCalculator, Path=DisplayText}" Name="display"/>
+                   FontSize="20" Background="AliceBlue" Text="{Binding ElementName=winCalculator, Path=DisplayText}"
+                   Name="display" ScrollViewer.HorizontalScrollBarVisibility="Auto" IsReadOnly="True"/>
         <Border BorderThickness="1" BorderBrush="AliceBlue">
             <Grid>
                 <Grid.RowDefinitions>
@@ -35,8 +36,8 @@
                     <ColumnDefinition Width="50"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="1"
-                    Grid.Row="1" Grid.Column="0" Name="btnOne" Click="btnOne_Click"/>
+                <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="1" 
+                        Grid.Row ="1" Grid.Column="0" Name="btnOne" Click="btnOne_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="2"
                     Grid.Row="1" Grid.Column="1" Name="btnTwo" Click="btnTwo_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="3"
@@ -62,19 +63,19 @@
                 <Button Style="{StaticResource ResourceKey=ButtonControl}"
                         Grid.Row="0" Grid.Column="2" Content="CE" Name="btnClearAll" Click="btnClearAll_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Background="Green"
-                        Grid.Row="4" Grid.Column="3" Content="=" FontSize="30" Name="btnEnter"/>
+                        Grid.Row="4" Grid.Column="3" Content="=" FontSize="30" Name="btnEnter" Click="btnEnter_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}"
-                        Grid.Row="0" Grid.Column="3" Name="btnAdd" Content="+" FontSize="30"/>
+                        Grid.Row="0" Grid.Column="3" Name="btnAdd" Content="+" FontSize="30" Click="btnAdd_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}"
-                        Grid.Row="1" Grid.Column="3" Name="btnSubtract" Content="-" FontSize="35"/>
+                        Grid.Row="1" Grid.Column="3" Name="btnSubtract" Content="-" FontSize="35" Click="btnSubtract_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}"
-                        Grid.Row="2" Grid.Column="3" Name="btnMultiply" Content="X" FontSize="18"/>
+                        Grid.Row="2" Grid.Column="3" Name="btnMultiply" Content="X" FontSize="18" Click="btnMultiply_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}"
-                        Grid.Row="3" Grid.Column="3" Name="btnDivide" Content="/" FontSize="18"/>
+                        Grid.Row="3" Grid.Column="3" Name="btnDivide" Content="/" FontSize="18" Click="btnDivide_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="+-"
                         Grid.Row="4" Grid.Column="0" Name="btnPlusMin" Click="btnPlusMin_Click"/>
                 <Button Style="{StaticResource ResourceKey=ButtonControl}" Content="."
-                        Grid.Row="4" Grid.Column="2" Name="btnDot" FontSize="18"/>
+                        Grid.Row="4" Grid.Column="2" Name="btnDot" FontSize="18" Click="btnDot_Click"/>
             </Grid>
         </Border>
     </DockPanel>
