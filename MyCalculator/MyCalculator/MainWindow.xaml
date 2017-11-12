@@ -18,7 +18,7 @@
     </Window.Resources>
     <DockPanel x:Name="CalcDock">
         <TextBox DockPanel.Dock="Top" Height="50" TextWrapping="NoWrap"
-                   VerticalAlignment="Top" Margin="10,10,10,10" TextAlignment="Right" 
+                   VerticalAlignment="Top" Margin="10,10,10,10" TextAlignment="Right" VerticalContentAlignment="Center"
                    FontSize="20" Background="AliceBlue" Text="{Binding ElementName=winCalculator, Path=DisplayText}"
                    Name="display" ScrollViewer.HorizontalScrollBarVisibility="Auto" IsReadOnly="True"/>
         <Border BorderThickness="1" BorderBrush="AliceBlue">

@@ -237,7 +237,17 @@ namespace MyCalculator
         
         private void btnDot_Click(object sender, RoutedEventArgs e)
         {
-            DisplayText += ".";
+            if (!DisplayText.Contains("."))
+            {
+                if (DisplayText.Length != 0)
+                {
+                    DisplayText += ".";
+                }
+                else
+                {
+                    DisplayText += "0.";
+                }
+            }
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
