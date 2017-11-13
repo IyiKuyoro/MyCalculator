@@ -237,6 +237,7 @@ namespace MyCalculator
         
         private void btnDot_Click(object sender, RoutedEventArgs e)
         {
+            //Check if text is decimal
             if (!DisplayText.Contains("."))
             {
                 if (DisplayText.Length != 0)
